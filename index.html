@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудиоплеер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>TROMBONE</h1>
+    <div class="container">
+        <button id="playButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 5.14v14.72L19 12.5 8 5.14z" fill="currentColor"/>
+            </svg>
+        </button>
+        <audio id="player">
+            <source src="trombone.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        const player = document.getElementById('player');
+        const playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', function() {
+            player.play()
+                .then(() => {
+                    playButton.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Ошибка воспроизведения:', error);
+                });
+        });
+    </script>
+</body>
+</html> 

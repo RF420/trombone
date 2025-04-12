@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: bahnschrift;
+}
+
+body {
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #fff;
+}
+
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#playButton {
+    background: #333;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#playButton:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+#playButton svg {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    /* Увеличенный отступ для визуальной центровки */
+}
+
+/* Стилизация аудиоплеера */
+audio::-webkit-media-controls-panel {
+    background-color: #333;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-timeline {
+    filter: invert(1);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #playButton {
+        width: 150px;
+        height: 150px;
+    }
+
+    #playButton svg {
+        width: 75px;
+        height: 75px;
+        margin-left: 8px;
+    }
+}
